@@ -1,0 +1,98 @@
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/fontawesome.min.js"></script> -->
+<script>
+    
+
+
+   let myChart= $('#MyChart')[0].getContext('2d');
+   var today=new Date();
+   var d=today.getDate();
+    // var d=(day)+"-"+(today.getMonth()+1)+'-'+today.getYear();
+    // var d1=(day+1)+"-"+(today.getMonth()+1)+'-'+today.getYear();
+    // var d2=(day+2)+"-"+(today.getMonth()+1)+'-'+today.getYear();
+    // var d3=(day+3)+"-"+(today.getMonth()+1)+'-'+today.getYear();
+   $('#d').text(d);
+   $('#d1').text(d+1);
+   $('#d2').text(d+2);
+   $('#d3').text(d+3);
+
+   var t=$('#t').html();
+   var t1=$('#t1').html();
+   var t2=$('#t2').html();
+   var t3=$('#t3').html();
+   var t4=$('#t4').html();
+   var t5=$('#t5').html();
+   var t6=$('#t6').html();
+
+   var h=$('#h').html();
+   var h1=$('#h1').html();
+   var h2=$('#h2').html();
+   var h3=$('#h3').html();
+   var h4=$('#h4').html();
+   var h5=$('#h5').html();
+   var h6=$('#h6').html();
+
+   var r=$('#r').html();
+   var r1=$('#r1').html();
+   var r2=$('#r2').html();
+   var r3=$('#r3').html();
+   var r4=$('#r4').html();
+   var r5=$('#r5').html();
+   var r6=$('#r6').html();
+
+   let masspopChart=new Chart(myChart,{
+         type:'line',
+         data:{
+             labels:[d-6,d-5,d-4,d-3,d-2,d-1,d],
+             datasets:[
+                 {
+                
+                 label:"Temperature(C)",
+                 data:[
+                    t1,t2,t3,t4,t5,t6,t
+                 ],
+                 borderColor:'orange',
+                 backgroundColor:'orange'
+             },
+
+            {
+                label:"Humidity (%)",
+                 data:[
+                 h1,h2,h3,h4,h5,h6,h
+                    
+                 ],
+                 borderColor:'purple',
+                 backgroundColor:'purple'
+             },
+
+             {
+                label:"Precipitation (mm)",
+                 data:[
+                 r1,r2,r3,r4,r5,r6,r
+                 
+                    
+                 ],
+                 borderColor:'blue',
+                 backgroundColor:'blue'
+             }   
+            
+            ]
+         },
+         options:{
+             title:{
+                 display:true,
+                 text:"Weather Parameters Stats for Past week",
+                //  fontSize:25
+             },
+             legend:{
+                 position:'top'
+             }
+         }
+     });
+</script>
+</body>
+</html>
