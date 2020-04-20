@@ -1,0 +1,132 @@
+<%- include('partials/header') %> 
+    
+
+<div class="container">
+  <div  class="row top">
+    <div class="col-12 d-flex">
+      <div class="card text-center">
+        <div class="card-header bg-dark">
+          <div class="compass-icon"><img src="/icons/compass.svg" width="50px" alt=""></div>
+        </div>
+        <div class="card-body">
+          <div class="card-title weather-title">
+            <h1> Weather</h1>
+        <p>View the current weather for your city</p>
+      </div>
+      <form action="/" method="POST">
+        <input type="text" name="city" class="ghost-input" placeholder="Enter a city">
+        <button role="submit" class="btn btn-dark btn-block">search</button>
+      </form>
+        </div>
+        <div class="card-footer text-muted bg-dark">
+          Powered By OpenWeatherMap
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="result">
+        <% if(temp !== null)  {%>
+          <h2 class="temp">Today Temperature <span id="d"></span>:<span id="t"><%= temp %></span><i> C</i></h2>
+        <% } %>
+        <% if(temp1 !== null)  {%>
+          <p>Temperature <span id="d1"></span>:<span id="t1"><%= temp1 %></span> <i> C</i></p>
+        <% } %>
+        <% if(temp2 !== null)  {%>
+          <p >Temperature <span id="d2"></span>:<span id="t2"><%= temp2 %></span><i> C</i> </p>
+        <% } %>
+        <% if(temp3 !== null)  {%>
+          <p>Temperature <span id="d3"></span> :<span id="t3"><%= temp3 %></span><i> C</i></p>
+        <% } %>
+        <% if(humidity!==null){%>
+            <h3 class="humidity">Humidity:<span id="h"><%= humidity %></span> %</h3>
+        <%} %> 
+        <% if(rain!==null){%>
+          <h3 class="rain">Precipition:<span id="r"><%= rain %></span>mm</h3>
+      <%} %> 
+    
+        <div class="icon-des">
+          <% if(icon !== null)  {%>
+            <img class="icon" src="http://openweathermap.org/img/w/<%= icon %>.png" alt="">
+          <% } %>
+          <% if(des !== null)  {%>
+            <h3><%= des %></h3>
+          <% } %>
+        </div>
+    
+        <% if(city !== null)  {%>
+          <strong><p class="city"><%= city %></p></strong>
+        <% } %>
+        
+      </div>
+    </div>
+  </div>
+  
+
+   
+  </div>
+  <hr>
+
+
+ 
+
+  <div class="container">
+    <div class="d-none"> 
+      <span id="t4"><%= temp4 %> </span>
+      <span id="t5"><%= temp5 %> </span>
+      <span id="t6"><%= temp6 %> </span>
+
+      <span id="h1"><%= humidity1 %> </span>
+      <span id="h2"><%= humidity2 %> </span>
+      <span id="h3"><%= humidity3 %> </span>
+      <span id="h4"><%= humidity4 %> </span>
+      <span id="h5"><%= humidity5 %> </span>
+      <span id="h6"><%= humidity6 %> </span>
+
+      <span id="r1"><%= rain1 %></span>
+      <span id="r2"><%= rain2 %></span>
+      <span id="r3"><%= rain3 %></span>
+      <span id="r4"><%= rain4 %></span>
+      <span id="r5"><%= rain5 %></span>
+      <span id="r6"><%= rain6 %></span>
+      
+
+    </div>
+    <div class="row">
+      <!-- <div class="col-12"> -->
+        <h3><i class="fa fa-compass"></i>Weather Paramters Stats</h3>
+        <canvas id="MyChart" width="400" height="400" ></canvas>
+      <!-- </div> -->
+     
+    </div>
+   
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- https://salty-gorge-32839.herokuapp.com/ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include('partials/footer') %> 
